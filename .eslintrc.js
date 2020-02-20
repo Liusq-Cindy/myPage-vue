@@ -24,6 +24,14 @@ module.exports = {
     // allow async-await
     'generator-star-spacing': 'off',
     // allow debugger during development
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'generator-star-spacing': 0,
+    "semi": ['error', "always"],
+    'prefer-promise-reject-errors': 0,
+    'standard/no-callback-literal': 0,
+    "vue/no-use-v-if-with-v-for": 0,
+    "editor.formatOnSave": true, // eslint保存格式化
+    "javascript.format.enable": false, // 不启动JavaScript格式化
+    "prettier.eslintIntegration": true // 让prettier遵循eslint格式美化
   }
 }

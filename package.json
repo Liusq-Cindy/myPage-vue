@@ -13,8 +13,11 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "@weiyi/validator": "^1.0.2",
     "echarts": "^4.4.0",
+    "element-ui": "^2.13.0",
     "less-loader": "^4.1.0",
+    "lodash": "^4.17.15",
     "v-charts": "^1.19.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"

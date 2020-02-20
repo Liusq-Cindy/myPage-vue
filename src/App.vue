@@ -3,10 +3,14 @@
     <!-- <router-view/> -->
     <header>
     <!-- router-link 定义点击后导航到哪个路径下 -->
-      <router-link to="/balnk">跳转空白页</router-link>
+      <router-link to="/blank">跳转空白页</router-link>
+      <router-link to="/test">HelloLSQ路由切换</router-link>
+      <router-link to="/validate">表单校验</router-link>
+      <router-link to="/validate2">表单校验222</router-link>
+
     </header>
     <!-- 对应的组件内容渲染到router-view中 -->
-    <div><p>首页index</p>
+    <div>
     <router-view></router-view>
     </div>
   </div>
@@ -14,8 +18,10 @@
 
 <script>
 export default {
-  name: 'App'
-}
+  name: 'App',
+  methods: {
+  }
+};
 </script>
 
 <style>
