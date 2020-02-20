@@ -12,6 +12,9 @@
         <el-form-item label="邮箱" prop="email">
           <el-input v-model="ruleForm.email"></el-input>
         </el-form-item>
+        <el-form-item label="血压" prop="bloodPressure">
+          <el-input v-model="ruleForm.bloodPressure"></el-input>
+        </el-form-item>
         <el-form-item label="地址" prop="address">
           <el-input v-model="ruleForm.address"></el-input>
         </el-form-item>
@@ -26,7 +29,7 @@
 
 <script>
 // 调用公共的validatorPass校验方法
-import validatorPass from './validator2';
+import { validatorReg } from './validator2';
 
 export default {
   name: 'validate',
@@ -37,18 +40,23 @@ export default {
       ruleForm: {
         name: '',
         phone: '',
-        email: ''
+        email: '',
+        bloodPressure: ''
       },
       rules: {
-        // 1、调用validatorPass----接受三个参数（npm表单校验方法名（string），错误提示文案(string)，是否必填(boolean)）
+        // validatorReg----接受三个参数（npm表单校验方法名（string），错误提示文案(string)，是否必填(boolean)）
         name: [
-          { validator: validatorPass('name', '名字请输入纯汉字'), trigger: 'blur' }
+          { validator: validatorReg('name', '请输入正确的名字'), trigger: 'blur' }
         ],
         phone: [
-          { validator: validatorPass('moblie', ''), trigger: 'blur' }
+          { validator: validatorReg('moblie', ''), trigger: 'blur' }
         ],
         email: [
-          { required: true, validator: validatorPass('email', '', true), trigger: 'blur' }
+          { required: true, validator: validatorReg('email', '', true), trigger: 'blur' }
+        ],
+        // 血压对应的npm返回规则，不是一个正则，而是一个方法，这里有兼容处理
+        bloodPressure: [
+          { required: true, validator: validatorReg('bloodPressure', '请输入1-300正整数', true), trigger: 'blur' }
         ],
         // 2、element原本的默认校验方法
         address: [
